@@ -1,6 +1,6 @@
 /* 作品集 · 深色专业风 */
 :root {
-  --bg: #0d1117;
+  --bg: #0d1b2e;
   --card: #161b22;
   --border: #30363d;
   --border-hover: #58a6ff;
@@ -25,7 +25,8 @@ body {
 .hero {
   padding: 72px 0 56px;
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, #0d1b2e 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #132c4a 0%, var(--bg) 100%);
+  transition: opacity 0.1s linear;
 }
 .hero-inner { display: flex; align-items: center; gap: 48px; }
 .hero-left { flex: 1; min-width: 0; }

@@ -116,9 +116,12 @@ fetch('projects.json')
   .catch(function (err) {
     document.getElementById('projects').innerHTML = '<p class="muted">项目数据加载失败</p>';
   });
+
+  if (window.initReveal) window.initReveal();
 </script>
 
 <script src="assets/dive.js"></script>
+<script src="assets/reveal.js"></script>
 
 </body>
 </html>

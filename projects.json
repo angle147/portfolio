@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "name": "HanaAgent 多 Agent 协作式 AI 助手平台",
+      "tagline": "以决策者角色指挥多 Agent 协作平台，从需求拆解到多模型调度完成产品落地闭环，沉淀出判断 AI 能力边界的规范方法",
+      "tags": ["多 Agent 编排", "多模型调度", "AI 产品"],
+      "metrics": ["本地 Qwen3-8B", "云端 DeepSeek", "Gemini 视觉"],
+      "link": "",
+      "screenshot": "assets/hana1.png"
+    },
+    {
+      "name": "简历速填浏览器插件",
+      "tagline": "8 级字段匹配机制适配多种页面结构，一键填充招聘网站复杂表单，单份网申从 30 分钟压缩到 3 分钟，数据纯本地存储",
+      "tags": ["Chrome 扩展", "表单自动化", "前端"],
+      "metrics": ["30 分钟 → 3 分钟", "8 级匹配", "纯本地"],
+      "link": "",
+      "screenshot": "assets/简历插件2.png"
+    },
+    {
+      "name": "多源信息采集与可视化看板",
+      "tagline": "自动聚合 7 类公开数据源，定时增量采集、清洗、更新、展示全链路自动化，人工逐站整理从每天 2 小时压缩到 5 分钟",
+      "tags": ["数据管道", "ETL", "定时任务"],
+      "metrics": ["7 数据源", "2 小时 → 5 分钟"],
+      "link": "https://angle147.github.io/job-board/",
+      "screenshot": "assets/招聘汇总.png"
+    },
+    {
+      "name": "挪威重卡充电网选址优化",
+      "tagline": "面向挪威极寒环境重卡电动化，基于实车冬季续航衰减数据（最冷时仅剩 30%-50% 里程），用 AMPL 混合整数规划输出 Hadsel-Narvik 走廊 4 站 56 桩最优部署",
+      "tags": ["运筹建模", "MILP", "AMPL", "全英文交付"],
+      "metrics": ["4 站 56 桩", "冬季衰减 30%-50%"],
+      "link": "",
+      "screenshot": "assets/选址优化地图.png"
+    },
+    {
+      "name": "dsv-bridge 识图工具链",
+      "tagline": "为纯文本大模型扩展视觉能力：驱动浏览器自动化调用 DeepSeek 网页版识图模式，把图片变成文字描述，零成本、会话即用即删，已落地 agent 工作流",
+      "tags": ["AI 工程", "视觉扩展", "Agent 工作流"],
+      "metrics": ["零成本视觉", "约 35 秒/次"],
+      "link": "",
+      "screenshot": "assets/dsv-flow.svg"
+    },
+    {
+      "name": "resume-ai-workflow 简历技能体系",
+      "tagline": "开源的简历 AI 工作流三件套：JD 解析 → 素材选材 → Typst 排版成稿，16 个策略 prompt 全开放、真实性红线可审计",
+      "tags": ["开源", "AI 工作流", "Typst"],
+      "metrics": ["16 prompts", "6 rubrics", "MIT"],
+      "link": "https://github.com/angle147/resume-ai-workflow",
+      "screenshot": "assets/resume-ai-workflow.png"
+    }
+  ]
+}

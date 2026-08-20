@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张汝朝 · 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1>张汝朝</h1>
+        <p class="tagline">交通运输硕士 · 供应链实操 × 运筹建模 × AI 自动化落地</p>
+        <div class="contact">
+          <a href="tel:19862163839">19862163839</a>
+          <a href="mailto:zhangruchao@foxmail.com">zhangruchao@foxmail.com</a>
+          <a href="https://github.com/angle147" target="_blank" rel="noopener">github.com/angle147</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="m"><b>6</b><span>代表项目</span></div>
+          <div class="m"><b>7</b><span>数据源采集</span></div>
+          <div class="m"><b>30→3</b><span>分钟 / 网申</span></div>
+          <div class="m"><b>3</b><span>开源仓库</span></div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="resume.pdf">下载简历</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img class="avatar" src="assets/avatar.jpg" alt="张汝朝">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section">
+    <h2>项目</h2>
+    <div class="grid" id="projects"></div>
+  </section>
+
+  <section class="section">
+    <h2>技能</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>AI 工程</h3>
+        <p>多 Agent 编排 · 多模型调度 · 大模型视觉扩展 · Prompt 工程</p>
+      </div>
+      <div class="skill-group">
+        <h3>数据与自动化</h3>
+        <p>Python · 数据管道 · 定时任务 · 多源采集与清洗</p>
+      </div>
+      <div class="skill-group">
+        <h3>运筹与建模</h3>
+        <p>AMPL（混合整数规划）· MATLAB · 面板数据分析</p>
+      </div>
+      <div class="skill-group">
+        <h3>工具与语言</h3>
+        <p>Typst · Git · AutoCAD · ArcGIS · VISSIM · 英语 CET-6（挪威全英文半年）</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>开源</h2>
+    <div class="oss">
+      <a class="oss-item" href="https://github.com/angle147/resume-ai-workflow" target="_blank" rel="noopener">
+        <span class="oss-name">resume-ai-workflow</span>
+        <span class="oss-desc">简历 AI 工作流三件套 · JD 解析 → 素材选材 → Typst 排版</span>
+      </a>
+      <a class="oss-item" href="https://github.com/angle147/job-board" target="_blank" rel="noopener">
+        <span class="oss-name">job-board</span>
+        <span class="oss-desc">济南物流岗位情报采集看板 · 7 源每日自动更新</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>张汝朝 · 供应链 / 物流 / 采购 / AI 应用 · 山东济南</p>
+    <p class="muted">简历与作品集持续更新中</p>
+  </div>
+</footer>
+
+<script>
+fetch('projects.json')
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    var grid = document.getElementById('projects');
+    data.projects.forEach(function (p) {
+      var card = document.createElement('a');
+      card.className = 'card';
+      if (p.link) { card.href = p.link; card.target = '_blank'; card.rel = 'noopener'; }
+      var shot = p.screenshot
+        ? '<img class="shot" src="' + p.screenshot + '" alt="' + p.name + '">'
+        : '<div class="shot placeholder">' + p.name.slice(0, 2) + '</div>';
+      var tags = p.tags.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('');
+      var metrics = p.metrics.map(function (m) { return '<span class="metric">' + m + '</span>'; }).join('');
+      card.innerHTML =
+        shot +
+        '<div class="card-body">' +
+          '<h3>' + p.name + '</h3>' +
+          '<p class="card-tagline">' + p.tagline + '</p>' +
+          '<div class="tags">' + tags + '</div>' +
+          '<div class="metrics">' + metrics + '</div>' +
+        '</div>';
+      grid.appendChild(card);
+    });
+  })
+  .catch(function (err) {
+    document.getElementById('projects').innerHTML = '<p class="muted">项目数据加载失败</p>';
+  });
+</script>
+
+</body>
+</html>

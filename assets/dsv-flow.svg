@@ -1,0 +1,24 @@
+<svg viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>dsv-bridge 识图工作流</title>
+  <desc>图片经 dsv 浏览器自动化调用 DeepSeek 识图模式，返回文字描述给纯文本大模型</desc>
+  <rect width="800" height="210" rx="10" fill="#161b22"/>
+  <rect x="28" y="62" width="150" height="86" rx="8" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="103" y="96" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#f0f6fc">图片 / 截图</text>
+  <text x="103" y="120" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="11" fill="#8b949e">任意格式输入</text>
+  <line x1="178" y1="105" x2="228" y2="105" stroke="#58a6ff" stroke-width="1.5"/>
+  <polygon points="228,99 240,105 228,111" fill="#58a6ff"/>
+  <rect x="240" y="62" width="170" height="86" rx="8" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="325" y="96" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#f0f6fc">dsv 浏览器自动化</text>
+  <text x="325" y="120" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="11" fill="#8b949e">登录态注入 · 上传 · 会话即用即删</text>
+  <line x1="410" y1="105" x2="460" y2="105" stroke="#58a6ff" stroke-width="1.5"/>
+  <polygon points="460,99 472,105 460,111" fill="#58a6ff"/>
+  <rect x="472" y="62" width="150" height="86" rx="8" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="547" y="96" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#f0f6fc">DeepSeek 识图模式</text>
+  <text x="547" y="120" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="11" fill="#8b949e">多模态视觉理解</text>
+  <line x1="622" y1="105" x2="672" y2="105" stroke="#58a6ff" stroke-width="1.5"/>
+  <polygon points="672,99 684,105 672,111" fill="#58a6ff"/>
+  <rect x="684" y="62" width="92" height="86" rx="8" fill="#0d1117" stroke="#4a6b4a" stroke-width="1.5"/>
+  <text x="730" y="96" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="15" fill="#f0f6fc">文字描述</text>
+  <text x="730" y="120" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="11" fill="#8b949e">给纯文本大模型</text>
+  <text x="400" y="180" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="12" fill="#8b949e">让任何不支持视觉的大模型获得看图能力 · 零成本 · 用后即删</text>
+</svg>

@@ -8,7 +8,7 @@
   var els = [];
 
   function refresh() {
-    els = Array.prototype.slice.call(document.querySelectorAll('.card, .skill-group, .oss-item'));
+    els = Array.prototype.slice.call(document.querySelectorAll('.card, .skill-group, .oss-item, .photo-item'));
     els.forEach(function (el) {
       if (!el.classList.contains('rv')) el.classList.add('rv');
     });

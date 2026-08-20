@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的生活 · 张汝朝作品集</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.life { padding: 40px 0 60px; }
+.back { display: inline-block; margin-bottom: 22px; color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.back:hover { text-decoration: underline; }
+.intro { color: var(--muted); font-size: 0.95rem; margin: 10px 0 0; }
+.photo-list { display: flex; flex-direction: column; gap: 52px; max-width: 720px; margin-top: 36px; }
+.photo-item img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: block;
+  filter: brightness(0.96);
+}
+.photo-item .cap {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.photo-item .cap .loc { color: var(--accent); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<header class="hero" style="padding:36px 0 30px">
+  <div class="container">
+    <a class="back" href="./">← 返回作品集</a>
+    <h1 style="margin:0;font-size:1.7rem">我的生活</h1>
+    <p class="intro">工作之外，喜欢到处走走。这些照片是路上的我自己，也算作品集之外的另一面。</p>
+  </div>
+</header>
+
+<main class="container life">
+  <div class="photo-list">
+    <div class="photo-item">
+      <img src="assets/20260820-192113.jpg" alt="罗马凯旋门前">
+      <p class="cap"><span class="loc">罗马 · 凯旋门前</span> — 一个人也逛得很自在，建筑看得久了会觉得自己很渺小，也挺好</p>
+    </div>
+    <div class="photo-item">
+      <img src="assets/20260820-192109.jpg" alt="古建筑旁眺望">
+      <p class="cap"><span class="loc">户外 · 古建筑旁</span> — 背着包看风景，也看看路往哪走</p>
+    </div>
+    <div class="photo-item">
+      <img src="assets/20260820-192104.jpg" alt="山顶徒步">
+      <p class="cap"><span class="loc">山顶 · 徒步</span> — 爬到高处，山在脚下，很多事情也看得开了</p>
+    </div>
+    <div class="photo-item">
+      <img src="assets/20260820-192118.jpg" alt="镜前自拍">
+      <p class="cap"><span class="loc">日常 · 镜前</span> — 偶尔也臭美一下，生活需要一点仪式感</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>张汝朝 · 供应链 / 物流 / 采购 / AI 应用 · 山东济南</p>
+  </div>
+</footer>
+
+<script src="assets/dive.js"></script>
+<script src="assets/reveal.js"></script>
+
+</body>
+</html>

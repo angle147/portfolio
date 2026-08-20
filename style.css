@@ -31,6 +31,20 @@ body {
 .hero-inner { display: flex; align-items: center; gap: 48px; }
 .hero-left { flex: 1; min-width: 0; }
 .hero-right { flex-shrink: 0; }
+.avatar-link { position: relative; display: block; }
+.avatar-link::after {
+  content: "我的生活 →";
+  position: absolute;
+  bottom: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.avatar-link:hover::after { opacity: 1; }
 .avatar {
   width: 150px;
   height: 150px;

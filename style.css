@@ -1,22 +1,25 @@
-/* 作品集 · 深色专业风 */
+/* 作品集 · 暖色毛玻璃风（黄绿 → 墨绿下潜） */
 :root {
-  --bg: #0d1b2e;
-  --card: #161b22;
-  --border: #30363d;
-  --border-hover: #58a6ff;
-  --text: #c9d1d9;
-  --text-strong: #f0f6fc;
-  --muted: #8b949e;
-  --accent: #58a6ff;
+  --bg: #e8f3d2;
+  --card: rgba(255, 255, 255, 0.55);
+  --border: rgba(90, 130, 90, 0.3);
+  --border-hover: #4a8f4f;
+  --text: #33473a;
+  --text-strong: #1f3327;
+  --muted: #6d7f68;
+  --accent: #3e7d46;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(1100px 500px at 75% -5%, rgba(255, 255, 255, 0.4), transparent 55%),
+    var(--bg);
   color: var(--text);
   font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
   line-height: 1.6;
+  transition: background 0.2s linear;
 }
 
 .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
@@ -25,7 +28,7 @@ body {
 .hero {
   padding: 72px 0 56px;
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, #132c4a 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #f4f9e0 0%, var(--bg) 100%);
   transition: opacity 0.1s linear;
 }
 .hero-inner { display: flex; align-items: center; gap: 48px; }
@@ -78,18 +81,6 @@ body {
 .contact { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 24px; }
 .contact a { color: var(--accent); text-decoration: none; font-size: 0.92rem; }
 .contact a:hover { text-decoration: underline; }
-.actions { display: flex; gap: 12px; }
-.btn {
-  display: inline-block;
-  padding: 9px 22px;
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 0.92rem;
-  transition: background 0.15s;
-}
-.btn:hover { background: rgba(88, 166, 255, 0.12); }
 
 /* sections */
 .section { padding: 48px 0; }
@@ -119,6 +110,15 @@ body {
 }
 .about .about-sign { color: var(--accent); font-style: italic; }
 
+/* glass (毛玻璃基础) */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
 /* project grid */
 .grid {
   display: grid;
@@ -128,6 +128,8 @@ body {
 .card {
   display: block;
   background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
@@ -140,7 +142,7 @@ body {
   height: 150px;
   object-fit: cover;
   display: block;
-  background: #1c2430;
+  background: #e2ecd2;
 }
 .shot.placeholder {
   display: flex;
@@ -148,7 +150,7 @@ body {
   justify-content: center;
   font-size: 2rem;
   font-weight: 600;
-  color: #2f3b4b;
+  color: #7d937a;
   letter-spacing: 0.1em;
 }
 .card-body { padding: 16px 18px 18px; }
@@ -159,8 +161,8 @@ body {
   padding: 2px 9px;
   font-size: 0.75rem;
   color: var(--accent);
-  background: rgba(88, 166, 255, 0.1);
-  border: 1px solid rgba(88, 166, 255, 0.25);
+  background: rgba(62, 125, 70, 0.1);
+  border: 1px solid rgba(62, 125, 70, 0.25);
   border-radius: 999px;
 }
 .metrics { display: flex; flex-wrap: wrap; gap: 6px 14px; }
@@ -171,6 +173,8 @@ body {
 .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
 .skill-group {
   background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 16px 18px;
@@ -178,13 +182,15 @@ body {
 .skill-group h3 { font-size: 0.95rem; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
 .skill-group p { font-size: 0.88rem; color: var(--text); }
 
-/* open source */
+/* attachments */
 .oss { display: flex; flex-direction: column; gap: 12px; }
 .oss-item {
   display: flex;
   align-items: baseline;
   gap: 14px;
   background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 14px 18px;

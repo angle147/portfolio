@@ -6,66 +6,117 @@
 <title>我的生活 · 张汝朝作品集</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.life { padding: 40px 0 60px; }
-.back { display: inline-block; margin-bottom: 22px; color: var(--accent); text-decoration: none; font-size: 0.9rem; }
-.back:hover { text-decoration: underline; }
-.intro { color: var(--muted); font-size: 0.95rem; margin: 10px 0 0; }
-.photo-list { display: flex; flex-direction: column; gap: 52px; max-width: 720px; margin-top: 36px; }
-.photo-item img {
+body {
+  background: linear-gradient(155deg, #f4f9df 0%, #e7f1c8 30%, #d4e9b4 55%, #bfe0ad 80%, #a8d6ae 100%);
+  min-height: 100vh;
+}
+.life-top {
+  position: sticky;
+  top: 16px;
+  z-index: 50;
+  max-width: 640px;
+  margin: 22px auto 0;
+  padding: 16px 26px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(90, 130, 90, 0.25);
+  border-radius: 16px;
+  text-align: center;
+}
+.life-top h1 { font-size: 1.3rem; color: #2c4536; font-weight: 600; margin-bottom: 4px; }
+.life-top p { font-size: 0.8rem; color: #6d7f68; margin: 0; }
+.life-top .back {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #3e7d46;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+.life-top .back:hover { text-decoration: underline; }
+
+.scatter {
+  position: relative;
+  height: 640px;
+  max-width: 980px;
+  margin: 26px auto 60px;
+}
+.scatter .photo-item {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+  border: 8px solid #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(60, 90, 60, 0.18);
+  cursor: pointer;
+  opacity: 0;
+  animation: pop 0.45s ease forwards;
+  animation-delay: var(--d, 0s);
+  transition: scale 0.2s ease;
+  z-index: var(--z, 0);
+}
+.scatter .photo-item:hover { scale: 1.05; }
+.scatter .photo-item img {
   width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  filter: brightness(0.96);
 }
-.photo-item .cap {
-  margin-top: 10px;
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.7;
+@keyframes pop {
+  from { opacity: 0; scale: 0.8; }
+  to { opacity: 1; scale: 1; }
 }
-.photo-item .cap .loc { color: var(--accent); font-weight: 500; }
+
+@media (max-width: 640px) {
+  .scatter { height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; padding: 10px; }
+  .scatter .photo-item { position: static; width: 44%; height: auto; aspect-ratio: 1; transform: none; animation: none; opacity: 1; }
+  .scatter .photo-item img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .scatter .photo-item { overflow: hidden; position: relative; }
+}
 </style>
 </head>
 <body>
 
-<header class="hero" style="padding:36px 0 30px">
-  <div class="container">
-    <a class="back" href="./">← 返回作品集</a>
-    <h1 style="margin:0;font-size:1.7rem">我的生活</h1>
-    <p class="intro">工作之外，喜欢到处走走。这些照片是路上的我自己，也算作品集之外的另一面。</p>
-  </div>
-</header>
+<div class="life-top">
+  <a class="back" href="./">← 返回</a>
+  <h1>我的生活</h1>
+  <p>工作之外，喜欢到处走走。</p>
+</div>
 
-<main class="container life">
-  <div class="photo-list">
-    <div class="photo-item">
-      <img src="assets/20260820-192113.jpg" alt="罗马凯旋门前">
-      <p class="cap"><span class="loc">罗马 · 凯旋门前</span> — 一个人也逛得很自在，建筑看得久了会觉得自己很渺小，也挺好</p>
-    </div>
-    <div class="photo-item">
-      <img src="assets/20260820-192109.jpg" alt="古建筑旁眺望">
-      <p class="cap"><span class="loc">户外 · 古建筑旁</span> — 背着包看风景，也看看路往哪走</p>
-    </div>
-    <div class="photo-item">
-      <img src="assets/20260820-192104.jpg" alt="山顶徒步">
-      <p class="cap"><span class="loc">山顶 · 徒步</span> — 爬到高处，山在脚下，很多事情也看得开了</p>
-    </div>
-    <div class="photo-item">
-      <img src="assets/20260820-192118.jpg" alt="镜前自拍">
-      <p class="cap"><span class="loc">日常 · 镜前</span> — 偶尔也臭美一下，生活需要一点仪式感</p>
-    </div>
-  </div>
-</main>
+<div class="scatter" id="scatter">
+  <div class="photo-item"><img src="assets/20260820-192113.jpg" alt="罗马凯旋门前"></div>
+  <div class="photo-item"><img src="assets/20260820-192109.jpg" alt="古建筑旁眺望"></div>
+  <div class="photo-item"><img src="assets/20260820-192104.jpg" alt="山顶徒步"></div>
+  <div class="photo-item"><img src="assets/20260820-192118.jpg" alt="镜前自拍"></div>
+</div>
 
-<footer class="footer">
-  <div class="container">
-    <p>张汝朝 · 供应链 / 物流 / 采购 / AI 应用 · 山东济南</p>
-  </div>
-</footer>
-
-<script src="assets/dive.js"></script>
-<script src="assets/reveal.js"></script>
+<script>
+// 散落布局：为每张照片生成伪随机位置 / 旋转 / 堆叠序 / 入场延迟
+(function () {
+  var items = document.querySelectorAll('.scatter .photo-item');
+  var isMobile = window.innerWidth <= 640;
+  if (isMobile || !items.length) return;
+  // 预置坐标池（保证不扎堆、不超出容器），手工微调避免完全随机打架
+  var spots = [
+    { l: 22, t: 18, r: -4 }, { l: 42, t: 12, r: 3 },
+    { l: 68, t: 22, r: -2 }, { l: 30, t: 46, r: 5 },
+    { l: 58, t: 42, r: -5 }, { l: 82, t: 48, r: 2 },
+    { l: 18, t: 72, r: 3 },  { l: 48, t: 70, r: -3 },
+    { l: 74, t: 74, r: 4 },  { l: 90, t: 80, r: -2 }
+  ];
+  items.forEach(function (el, i) {
+    var s = spots[i % spots.length];
+    el.style.left = s.l + '%';
+    el.style.top = s.t + '%';
+    el.style.setProperty('--rot', s.r + 'deg');
+    el.style.setProperty('--z', i + 1);
+    el.style.setProperty('--d', (i * 0.12) + 's');
+  });
+})();
+</script>
 
 </body>
 </html>

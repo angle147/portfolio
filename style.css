@@ -95,6 +95,16 @@ body {
   background: var(--border);
 }
 
+/* about */
+.about p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.9;
+  margin: 0 0 14px;
+  max-width: 720px;
+}
+.about .about-sign { color: var(--accent); font-style: italic; }
+
 /* project grid */
 .grid {
   display: grid;

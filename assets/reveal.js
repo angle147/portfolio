@@ -22,7 +22,9 @@
     var vh = window.innerHeight || document.documentElement.clientHeight;
     els.forEach(function (el) {
       var r = el.getBoundingClientRect();
-      var visible = r.top < vh * 0.92 && r.bottom > 0;
+      // 淡入：卡片从底部进入视口（露出约 8% 时浮现）
+      // 淡出：卡片滚到顶部、底部还剩约 8% 视口高度时开始消失（在可见区完成淡出）
+      var visible = r.top < vh * 0.92 && r.bottom > vh * 0.08;
       el.classList.toggle('in', visible);
     });
   }

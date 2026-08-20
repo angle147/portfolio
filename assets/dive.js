@@ -11,15 +11,20 @@
   var CA1 = 0.55, CA2 = 0.55;                            // --card alpha 稳定
   var BD1 = [90, 130, 90], BD2 = [195, 215, 190];       // --border (rgba)
   var BA1 = 0.3, BA2 = 0.25;                             // --border alpha
-  var TX1 = [40, 58, 46], TX2 = [235, 240, 233];        // --text 两端更极端
-  var TS1 = [31, 51, 39], TS2 = [245, 250, 244];        // --text-strong
-  var MU1 = [109, 127, 104], MU2 = [175, 190, 176];     // --muted
-  var AC1 = [62, 125, 70], AC2 = [135, 205, 145];       // --accent
+  var TX1 = [28, 42, 33], TX2 = [248, 250, 247];       // --text 浅端深硬 / 深端近白
+  var TS1 = [20, 32, 24], TS2 = [252, 253, 250];        // --text-strong
+  var MU1 = [95, 110, 92], MU2 = [190, 200, 190];       // --muted
+  var AC1 = [50, 105, 58], AC2 = [150, 215, 158];       // --accent
   var HERO_FADE = 0.35; // 前 35% 深度内页眉淡出
 
   function lerp(a, b, t) { return Math.round(a + (b - a) * t); }
   function easeIn(p) { return p * p; } // 背景：先慢后快
-  function easeText(p) { return Math.pow(p, 0.5); } // 文字：更快变浅，缩小与卡片亮度的交叉区
+  // 文字：分段开关式——前 50% 深度保持深色，50%-80% 快速过渡到浅色，80% 后锁定近白
+  function easeText(p) {
+    if (p < 0.5) return 0;
+    if (p > 0.8) return 1;
+    return (p - 0.5) / 0.3;
+  }
   function set(name, rgb, alpha) {
     root.style.setProperty(name, alpha != null
       ? 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + alpha.toFixed(3) + ')'

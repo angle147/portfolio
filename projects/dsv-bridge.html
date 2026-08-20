@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dsv-bridge 识图工具链 · 张汝朝作品集</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.detail { padding: 40px 0 60px; }
+.back { display: inline-block; margin-bottom: 26px; color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.back:hover { text-decoration: underline; }
+.detail h1 { font-size: 1.9rem; color: var(--text-strong); font-weight: 600; margin-bottom: 6px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: 0.88rem; margin-bottom: 18px; }
+.section-block { margin-top: 30px; }
+.section-block h2 { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.section-block h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.section-block p { font-size: 0.92rem; color: var(--text); line-height: 1.8; }
+.section-block ul { list-style: none; padding: 0; }
+.section-block li { font-size: 0.9rem; color: var(--text); line-height: 1.8; padding-left: 18px; position: relative; margin-bottom: 4px; }
+.section-block li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }
+.gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 14px; }
+.gallery img, .gallery svg { width: 100%; border: 1px solid var(--border); border-radius: 10px; display: block; }
+.metrics-bar { display: flex; flex-wrap: wrap; gap: 10px 30px; margin-top: 16px; }
+.metrics-bar .m b { display: block; font-size: 1.25rem; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.metrics-bar .m span { font-size: 0.78rem; color: var(--muted); }
+.links { margin-top: 24px; }
+.links a { display: inline-block; margin-right: 14px; padding: 8px 18px; border: 1px solid var(--accent); border-radius: 6px; color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+.links a:hover { background: rgba(88,166,255,0.12); }
+</style>
+</head>
+<body>
+
+<header class="hero" style="padding:36px 0 30px">
+  <div class="container">
+    <a class="back" href="../">← 返回作品集</a>
+    <h1 style="margin:0;font-size:1.7rem">dsv-bridge 识图工具链</h1>
+    <div class="meta">
+      <span>角色：工具链集成与二次开发</span>
+      <span>时间：2026</span>
+      <span>定位：为纯文本大模型扩展视觉</span>
+    </div>
+  </div>
+</header>
+
+<main class="container detail">
+
+  <div class="section-block">
+    <h2>背景</h2>
+    <p>DeepSeek 官方 API 是纯文本模型，没有图片理解能力；但 DeepSeek 网页版存在隐藏的「识图模式」（真实多模态视觉理解，非 OCR）。如果能把这个能力暴露成标准 CLI，任何不支持视觉的大模型（DeepSeek API、Claude Code、Codex、本地模型）都能"看图"。</p>
+  </div>
+
+  <div class="section-block">
+    <h2>方案</h2>
+    <ul>
+      <li><strong>浏览器自动化驱动</strong>：驱动真实浏览器操作 DeepSeek 网页版识图模式，规避 PoW 反爬（前端自动计算，无需逆向）</li>
+      <li><strong>登录态注入与会话管理</strong>：token 持久化、用后即删（识图完成自动删除会话，对话列表零污染）</li>
+      <li><strong>分层识图策略</strong>：按任务精度分工（泛描述 / 结构判断 / 客观验证），不同任务用不同工具，成本与精度匹配</li>
+      <li><strong>agent 工作流集成</strong>：封装为转发壳，让纯文本 agent 透明调用视觉能力</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>结果</h2>
+    <ul>
+      <li>纯文本大模型获得零成本视觉能力，单次约 35 秒，真实多模态理解而非 OCR</li>
+      <li>已落地为日常 agent 工作流的标准环节（图表识别、界面描述、公式与截图理解）</li>
+      <li>上游为开源项目 deepseek-vision-cli（MIT），本项目的增量在于转发层、分层策略与工作流集成</li>
+    </ul>
+    <div class="metrics-bar">
+      <div class="m"><b>零成本</b><span>视觉能力</span></div>
+      <div class="m"><b>35 秒</b><span>单次识别</span></div>
+      <div class="m"><b>3 层</b><span>精度分工</span></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>工作流</h2>
+    <div class="gallery">
+      <img src="../assets/dsv-flow.svg" alt="dsv-bridge 识图工作流">
+    </div>
+  </div>
+
+  <div class="links">
+    <a href="https://github.com/menghuanshiguang/deepseek-vision-cli" target="_blank" rel="noopener">上游项目 deepseek-vision-cli</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>张汝朝 · 供应链 / 物流 / 采购 / AI 应用 · 山东济南</p>
+  </div>
+</footer>
+
+</body>
+</html>

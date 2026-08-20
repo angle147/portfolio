@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>简历速填浏览器插件 · 张汝朝作品集</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.detail { padding: 40px 0 60px; }
+.back { display: inline-block; margin-bottom: 26px; color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.back:hover { text-decoration: underline; }
+.detail h1 { font-size: 1.9rem; color: var(--text-strong); font-weight: 600; margin-bottom: 6px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: 0.88rem; margin-bottom: 18px; }
+.section-block { margin-top: 30px; }
+.section-block h2 { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.section-block h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.section-block p { font-size: 0.92rem; color: var(--text); line-height: 1.8; }
+.section-block ul { list-style: none; padding: 0; }
+.section-block li { font-size: 0.9rem; color: var(--text); line-height: 1.8; padding-left: 18px; position: relative; margin-bottom: 4px; }
+.section-block li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.gallery img { width: 100%; border: 1px solid var(--border); border-radius: 10px; display: block; }
+.metrics-bar { display: flex; flex-wrap: wrap; gap: 10px 30px; margin-top: 16px; }
+.metrics-bar .m b { display: block; font-size: 1.25rem; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.metrics-bar .m span { font-size: 0.78rem; color: var(--muted); }
+.links { margin-top: 24px; }
+.links a { display: inline-block; margin-right: 14px; padding: 8px 18px; border: 1px solid var(--accent); border-radius: 6px; color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+.links a:hover { background: rgba(88,166,255,0.12); }
+@media (max-width: 640px) { .gallery { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="hero" style="padding:36px 0 30px">
+  <div class="container">
+    <a class="back" href="../">← 返回作品集</a>
+    <h1 style="margin:0;font-size:1.7rem">简历速填浏览器插件</h1>
+    <div class="meta">
+      <span>角色：独立开发</span>
+      <span>时间：2026.05 - 至今</span>
+      <span>状态：持续迭代 · 已开源</span>
+    </div>
+  </div>
+</header>
+
+<main class="container detail">
+
+  <div class="section-block">
+    <h2>背景</h2>
+    <p>招聘网站表单字段多、页面结构杂，每份网申要手动填 30 分钟以上，且不同平台的表单叫法完全不同（同一字段在不同网站有七八种标签）。核心需求：一个能理解"字段语义"而非只认 id 的通用填表引擎。</p>
+  </div>
+
+  <div class="section-block">
+    <h2>方案</h2>
+    <ul>
+      <li><strong>8 级字段匹配优先级</strong>：label 关联 → aria → title → 相邻 td → 同行 td → 表头 th → 父元素文本 → input 属性，层层兜底</li>
+      <li><strong>多 UI 组件库适配</strong>：攻克 crec-ui、phoenix-ui、Element UI、Ant Design 等自定义组件，支持级联选择器、地区选择器的程序化填充</li>
+      <li><strong>字段语义归位词典</strong>：同一字段在不同网站的不同叫法自动映射，一次配置长期复用</li>
+      <li><strong>数据纯本地</strong>：数据存浏览器本地，无任何网络请求，不上传云端</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>结果</h2>
+    <ul>
+      <li>单份网申填写从 30 分钟压缩到 3 分钟，多版本数据一键切换</li>
+      <li>覆盖三级级联下拉、家庭成员表格、生源地分段填充等复杂场景</li>
+      <li>源码已脱敏开源（示例数据为虚构人物），可直接安装使用</li>
+    </ul>
+    <div class="metrics-bar">
+      <div class="m"><b>30 → 3</b><span>分钟 / 网申</span></div>
+      <div class="m"><b>8 级</b><span>字段匹配</span></div>
+      <div class="m"><b>100%</b><span>数据本地</span></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>界面</h2>
+    <div class="gallery">
+      <img src="../assets/简历插件1.png" alt="插件侧边栏">
+      <img src="../assets/简历插件2.png" alt="一键填充效果">
+    </div>
+  </div>
+
+  <div class="links">
+    <a href="https://github.com/angle147/resume-quick-fill" target="_blank" rel="noopener">GitHub 仓库</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>张汝朝 · 供应链 / 物流 / 采购 / AI 应用 · 山东济南</p>
+  </div>
+</footer>
+
+</body>
+</html>

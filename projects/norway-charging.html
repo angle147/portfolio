@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>挪威重卡充电网选址优化 · 张汝朝作品集</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.detail { padding: 40px 0 60px; }
+.back { display: inline-block; margin-bottom: 26px; color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.back:hover { text-decoration: underline; }
+.detail h1 { font-size: 1.9rem; color: var(--text-strong); font-weight: 600; margin-bottom: 6px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: 0.88rem; margin-bottom: 18px; }
+.section-block { margin-top: 30px; }
+.section-block h2 { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.section-block h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.section-block p { font-size: 0.92rem; color: var(--text); line-height: 1.8; }
+.section-block ul { list-style: none; padding: 0; }
+.section-block li { font-size: 0.9rem; color: var(--text); line-height: 1.8; padding-left: 18px; position: relative; margin-bottom: 4px; }
+.section-block li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.gallery img { width: 100%; border: 1px solid var(--border); border-radius: 10px; display: block; }
+.metrics-bar { display: flex; flex-wrap: wrap; gap: 10px 30px; margin-top: 16px; }
+.metrics-bar .m b { display: block; font-size: 1.25rem; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
+.metrics-bar .m span { font-size: 0.78rem; color: var(--muted); }
+.links { margin-top: 24px; }
+.links a { display: inline-block; margin-right: 14px; padding: 8px 18px; border: 1px solid var(--accent); border-radius: 6px; color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+.links a:hover { background: rgba(88,166,255,0.12); }
+@media (max-width: 640px) { .gallery { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="hero" style="padding:36px 0 30px">
+  <div class="container">
+    <a class="back" href="../">← 返回作品集</a>
+    <h1 style="margin:0;font-size:1.7rem">挪威重卡充电网选址优化</h1>
+    <div class="meta">
+      <span>角色：小组成员（3 人组队）</span>
+      <span>时间：2025.08 - 2026.01 · UiT 挪威交换</span>
+      <span>课程：INE-3800 运筹学</span>
+    </div>
+  </div>
+</header>
+
+<main class="container detail">
+
+  <div class="section-block">
+    <h2>背景</h2>
+    <p>Hadsel - Narvik 走廊是挪威诺尔兰郡最重要的海鲜运输干线。挪威政府要求 2030 年起新售卡车全部电动化，但极寒环境下电动重卡续航骤降：实车测试显示 Volvo FM 理论续航 380km，冬季仅剩 100-150km（衰减 30%-50%）。充电设施如何选址，直接决定电气化能否落地。</p>
+  </div>
+
+  <div class="section-block">
+    <h2>方案</h2>
+    <ul>
+      <li><strong>实车数据驱动</strong>：基于 Volvo、Scania、Mercedes-Benz 官方技术参数与 Hadsel-Narvik 走廊冬季实车测试数据（含 -20°C 环境与山地地形影响）</li>
+      <li><strong>AMPL 混合整数规划</strong>：构建选址-分配联合模型，覆盖候选站、容量、双向物流覆盖等约束</li>
+      <li><strong>最恶劣工况硬约束</strong>：将冬季最差续航设为硬约束，确保方案在极端条件下鲁棒</li>
+      <li><strong>全英文交付</strong>：需求分析、阶段汇报与最终报告全程英文，三人跨国协作</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>结果</h2>
+    <ul>
+      <li>输出 4 站 56 桩最优部署方案，以最小基建投入满足全线双向物流覆盖</li>
+      <li>独立完成续航衰减分析报告（多车型冬季/夏季实测对比），作为建模的关键输入</li>
+      <li>完整项目文档 30+ 页（含模型、数据与结论），详见下方素材</li>
+    </ul>
+    <div class="metrics-bar">
+      <div class="m"><b>4 站 56 桩</b><span>最优部署</span></div>
+      <div class="m"><b>30%-50%</b><span>冬季续航衰减</span></div>
+      <div class="m"><b>AMPL</b><span>混合整数规划</span></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>素材</h2>
+    <div class="gallery" style="grid-template-columns:1fr">
+      <img src="../assets/选址优化地图.png" alt="Hadsel-Narvik 走廊选址地图">
+    </div>
+    <div class="links">
+      <a href="../assets/norway/Analysis-Report.pdf" target="_blank" rel="noopener">续航衰减分析报告（PDF）</a>
+      <a href="../assets/norway/OR-1-Project.pdf" target="_blank" rel="noopener">选址建模项目文档（PDF）</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>张汝朝 · 供应链 / 物流 / 采购 / AI 应用 · 山东济南</p>
+  </div>
+</footer>
+
+</body>
+</html>

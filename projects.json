@@ -5,7 +5,7 @@
       "tagline": "以决策者角色指挥多 Agent 协作平台，从需求拆解到多模型调度完成产品落地闭环，沉淀出判断 AI 能力边界的规范方法",
       "tags": ["多 Agent 编排", "多模型调度", "AI 产品"],
       "metrics": ["本地 Qwen3-8B", "云端 DeepSeek", "Gemini 视觉"],
-      "link": "",
+      "link": "projects/hanaagent.html",
       "screenshot": "assets/hana1.png"
     },
     {
@@ -13,7 +13,7 @@
       "tagline": "8 级字段匹配机制适配多种页面结构，一键填充招聘网站复杂表单，单份网申从 30 分钟压缩到 3 分钟，数据纯本地存储",
       "tags": ["Chrome 扩展", "表单自动化", "前端"],
       "metrics": ["30 分钟 → 3 分钟", "8 级匹配", "纯本地"],
-      "link": "",
+      "link": "projects/resume-quick-fill.html",
       "screenshot": "assets/简历插件2.png"
     },
     {
@@ -29,7 +29,7 @@
       "tagline": "面向挪威极寒环境重卡电动化，基于实车冬季续航衰减数据（最冷时仅剩 30%-50% 里程），用 AMPL 混合整数规划输出 Hadsel-Narvik 走廊 4 站 56 桩最优部署",
       "tags": ["运筹建模", "MILP", "AMPL", "全英文交付"],
       "metrics": ["4 站 56 桩", "冬季衰减 30%-50%"],
-      "link": "",
+      "link": "projects/norway-charging.html",
       "screenshot": "assets/选址优化地图.png"
     },
     {
@@ -37,7 +37,7 @@
       "tagline": "为纯文本大模型扩展视觉能力：驱动浏览器自动化调用 DeepSeek 网页版识图模式，把图片变成文字描述，零成本、会话即用即删，已落地 agent 工作流",
       "tags": ["AI 工程", "视觉扩展", "Agent 工作流"],
       "metrics": ["零成本视觉", "约 35 秒/次"],
-      "link": "",
+      "link": "projects/dsv-bridge.html",
       "screenshot": "assets/dsv-flow.svg"
     },
     {

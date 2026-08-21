@@ -39,14 +39,14 @@ body {
 
 .scatter {
   position: relative;
-  height: 700px;
+  height: 780px;
   max-width: 980px;
   margin: 26px auto 60px;
 }
 .scatter .photo-item {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
   border: 8px solid #ffffff;
   border-radius: 6px;
@@ -99,6 +99,9 @@ body {
   <div class="photo-item"><img src="assets/20260821-105443.jpg" alt="校园风光"></div>
   <div class="photo-item"><img src="assets/20260821-105721.jpg" alt="晚霞古建筑"></div>
   <div class="photo-item"><img src="assets/20260821-105724.jpg" alt="生活瞬间"></div>
+  <div class="photo-item"><img src="assets/20260820-193452.jpg" alt="生活瞬间"></div>
+  <div class="photo-item"><img src="assets/20260820-193515.jpg" alt="生活瞬间"></div>
+  <div class="photo-item"><img src="assets/20260820-193518.jpg" alt="生活瞬间"></div>
 </div>
 
 <script>
@@ -107,12 +110,13 @@ body {
   var items = document.querySelectorAll('.scatter .photo-item');
   var isMobile = window.innerWidth <= 640;
   if (isMobile || !items.length) return;
-  // 预置坐标池（4 行错落，拉开间距，避免过度重叠），手工微调
+  // 预置坐标池（5 行错落，拉开间距），手工微调
   var spots = [
-    { l: 18, t: 8, r: -4 },   { l: 42, t: 12, r: 3 },   { l: 68, t: 10, r: -2 },  { l: 88, t: 14, r: 2 },
-    { l: 24, t: 32, r: 5 },   { l: 50, t: 28, r: -5 },  { l: 74, t: 34, r: 3 },   { l: 14, t: 54, r: -3 },
-    { l: 38, t: 52, r: 2 },   { l: 62, t: 50, r: -4 },  { l: 84, t: 56, r: 4 },   { l: 28, t: 74, r: 3 },
-    { l: 52, t: 72, r: -2 },  { l: 78, t: 76, r: -3 }
+    { l: 16, t: 7, r: -4 },   { l: 38, t: 10, r: 3 },   { l: 62, t: 8, r: -2 },   { l: 84, t: 12, r: 2 },
+    { l: 22, t: 26, r: 5 },   { l: 46, t: 22, r: -5 },  { l: 70, t: 26, r: 3 },   { l: 12, t: 44, r: -3 },
+    { l: 34, t: 42, r: 2 },   { l: 58, t: 40, r: -4 },  { l: 80, t: 44, r: 4 },   { l: 24, t: 60, r: 3 },
+    { l: 48, t: 58, r: -2 },  { l: 72, t: 62, r: -3 },  { l: 16, t: 76, r: 2 },   { l: 42, t: 78, r: -4 },
+    { l: 66, t: 78, r: 3 },   { l: 88, t: 80, r: -2 }
   ];
   items.forEach(function (el, i) {
     var s = spots[i % spots.length];

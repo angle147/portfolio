@@ -39,7 +39,7 @@ body {
 
 .scatter {
   position: relative;
-  height: 640px;
+  height: 700px;
   max-width: 980px;
   margin: 26px auto 60px;
 }
@@ -91,6 +91,14 @@ body {
   <div class="photo-item"><img src="assets/20260820-192109.jpg" alt="古建筑旁眺望"></div>
   <div class="photo-item"><img src="assets/20260820-192104.jpg" alt="山顶徒步"></div>
   <div class="photo-item"><img src="assets/20260820-192118.jpg" alt="镜前自拍"></div>
+  <div class="photo-item"><img src="assets/20260820-193521.jpg" alt="生活瞬间"></div>
+  <div class="photo-item"><img src="assets/20260820-193525.jpg" alt="生活瞬间"></div>
+  <div class="photo-item"><img src="assets/20260820-193529.jpg" alt="生活瞬间"></div>
+  <div class="photo-item"><img src="assets/20260821-105427.jpg" alt="生活瞬间"></div>
+  <div class="photo-item"><img src="assets/20260821-105437.jpg" alt="生活瞬间"></div>
+  <div class="photo-item"><img src="assets/20260821-105443.jpg" alt="校园风光"></div>
+  <div class="photo-item"><img src="assets/20260821-105721.jpg" alt="晚霞古建筑"></div>
+  <div class="photo-item"><img src="assets/20260821-105724.jpg" alt="生活瞬间"></div>
 </div>
 
 <script>
@@ -99,13 +107,12 @@ body {
   var items = document.querySelectorAll('.scatter .photo-item');
   var isMobile = window.innerWidth <= 640;
   if (isMobile || !items.length) return;
-  // 预置坐标池（保证不扎堆、不超出容器），手工微调避免完全随机打架
+  // 预置坐标池（4 行错落，拉开间距，避免过度重叠），手工微调
   var spots = [
-    { l: 22, t: 18, r: -4 }, { l: 42, t: 12, r: 3 },
-    { l: 68, t: 22, r: -2 }, { l: 30, t: 46, r: 5 },
-    { l: 58, t: 42, r: -5 }, { l: 82, t: 48, r: 2 },
-    { l: 18, t: 72, r: 3 },  { l: 48, t: 70, r: -3 },
-    { l: 74, t: 74, r: 4 },  { l: 90, t: 80, r: -2 }
+    { l: 18, t: 8, r: -4 },   { l: 42, t: 12, r: 3 },   { l: 68, t: 10, r: -2 },  { l: 88, t: 14, r: 2 },
+    { l: 24, t: 32, r: 5 },   { l: 50, t: 28, r: -5 },  { l: 74, t: 34, r: 3 },   { l: 14, t: 54, r: -3 },
+    { l: 38, t: 52, r: 2 },   { l: 62, t: 50, r: -4 },  { l: 84, t: 56, r: 4 },   { l: 28, t: 74, r: 3 },
+    { l: 52, t: 72, r: -2 },  { l: 78, t: 76, r: -3 }
   ];
   items.forEach(function (el, i) {
     var s = spots[i % spots.length];

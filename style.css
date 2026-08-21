@@ -112,7 +112,7 @@ body {
   color: var(--text);
   line-height: 1.9;
   margin: 0 0 14px;
-  max-width: 720px;
+  text-align: justify;
 }
 .about p:last-child { margin-bottom: 0; }
 .about .about-sign { color: var(--accent); font-style: italic; }

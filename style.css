@@ -1,13 +1,13 @@
 /* 作品集 · 暖色毛玻璃风（黄绿 → 墨绿下潜） */
 :root {
   --bg: #e8f3d2;
-  --card: rgba(255, 255, 255, 0.55);
+  --card: rgba(255, 255, 255, 0.6);
   --border: rgba(90, 130, 90, 0.3);
   --border-hover: #4a8f4f;
-  --text: #33473a;
-  --text-strong: #1f3327;
-  --muted: #6d7f68;
-  --accent: #3e7d46;
+  --text: #1c2e24;
+  --text-strong: #14241a;
+  --muted: #5d705a;
+  --accent: #2f6b38;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -85,22 +85,28 @@ body {
 /* sections */
 .section { padding: 48px 0; }
 .section h2 {
+  display: inline-block;
   font-size: 1.35rem;
   font-weight: 600;
   color: var(--text-strong);
   margin-bottom: 26px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.section h2::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--border);
+  padding: 6px 18px;
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
 }
 
 /* about */
+.about {
+  padding: 20px 24px;
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
 .about p {
   font-size: 0.95rem;
   color: var(--text);
@@ -108,6 +114,7 @@ body {
   margin: 0 0 14px;
   max-width: 720px;
 }
+.about p:last-child { margin-bottom: 0; }
 .about .about-sign { color: var(--accent); font-style: italic; }
 
 /* glass (毛玻璃基础) */
@@ -211,8 +218,17 @@ body {
   padding: 30px 0 40px;
   text-align: center;
 }
+.footer .container {
+  max-width: 520px;
+  padding: 14px 22px;
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
 .footer p { font-size: 0.85rem; color: var(--text); }
-.muted { color: var(--muted); font-size: 0.78rem; margin-top: 4px; }
+.footer .muted { color: var(--muted); font-size: 0.78rem; margin-top: 4px; }
 
 /* responsive */
 @media (max-width: 640px) {
